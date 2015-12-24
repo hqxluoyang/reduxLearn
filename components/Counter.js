@@ -1,22 +1,24 @@
 import React, { Component, PropTypes } from 'react'
+import RaisedButton from 'material-ui/lib/raised-button';
+import Message from './Message';
 
-import test from '../css/test.css'
+import test from '../css/testLess.less'
+import testcss from '../css/test.css'
 
 class Counter extends Component {
+  
+  click(){
+    alert("hehe")
+  }
+
   render() {
     const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props
     return (
-      <p className = {test.bg}>
-        Clicked: {counter} times
-        {' '}
-        <button onClick={increment}>+</button>
-        {' '}
-        <button onClick={decrement}>-</button>
-        {' '}
-        <button onClick={incrementIfOdd}>Increment if odd</button>
-        {' '}
-        <button onClick={() => incrementAsync()}>Increment async</button>
-      </p>
+    <div>
+       
+        <RaisedButton onClick={this.click} label="Default" />
+        <Message />
+      </div>
     )
   }
 }
